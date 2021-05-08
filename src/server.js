@@ -15,10 +15,13 @@ io.on('connection', (socket) => {
   });
 });
 
-mongoose.connect('mongodb://localhost:27017/semana6', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(
+  'mongodb+srv://semana6:semana6@cluster0.p6g15.mongodb.net/semana6?retryWrites=true&w=majority',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 app.use((req, res, next) => {
   req.io = io;
